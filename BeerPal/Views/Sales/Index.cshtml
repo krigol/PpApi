@@ -1,6 +1,9 @@
-﻿@model PayPal.Api.PaymentHistory
+﻿@using System.Globalization;
+
+@model PayPal.Api.PaymentHistory
 
 @{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
     ViewBag.Title = "Sales";
 }
 
@@ -36,7 +39,7 @@
                                 <td>@payment.id</td>
                                 <td>@payment.create_time</td>
                                 <td>@payment.state</td>
-                                <td class="text-right">$@(decimal.Parse(payment.transactions.First().amount.total).ToString("0.00"))</td>
+                                <td class="text-right">$@(decimal.Parse(payment.transactions.First().amount.total, CultureInfo.InvariantCulture))</td>
                                 <td class="text-right">@(payment.transactions.First().related_resources.First(x => x.sale != null).sale.state)</td>
                                 <td class="text-right">
                                     @if (payment.transactions.First().related_resources.First(x => x.sale != null).sale.state == "refunded")
@@ -46,10 +49,10 @@
                                     else
                                     {
                                         using (Html.BeginForm("Refund", "Sales", FormMethod.Post))
-                                         {
-                                             @Html.Hidden("saleId", payment.transactions.First().related_resources.First(x => x.sale != null).sale.id)
-                                             <button type="submit" class="btn btn-warning">Refund</button>
-                                         }
+                                        {
+                                            @Html.Hidden("saleId", payment.transactions.First().related_resources.First(x => x.sale != null).sale.id)
+                                            <button type="submit" class="btn btn-warning">Refund</button>
+                                        }
                                     }
                                 </td>
                             </tr>

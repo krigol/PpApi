@@ -181,6 +181,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BillingPlansController.cs" />
     <Compile Include="Controllers\ECommerceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -337,8 +338,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -374,6 +373,7 @@
     <Content Include="Views\Subscription\Purchase.cshtml" />
     <Content Include="Views\Subscription\ThankYou.cshtml" />
     <None Include="Views\Sales\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <None Include="Views\Subscribers\Details.cshtml" />
     <None Include="Views\Subscribers\Index.cshtml" />
     <Content Include="Views\Webhooks\Index.cshtml" />
@@ -381,6 +381,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Admin\" />
     <Folder Include="Views\SinglePurchaseItem\" />
   </ItemGroup>
   <ItemGroup>

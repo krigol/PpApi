@@ -320,10 +320,6 @@ blockquote {
 	border-radius: 100%;
 }
 
-.navbar-default .nav-left > li:nth-child(5n + 0){
-	display: none;
-}
-
 .navbar-default .nav-left{
 	float: left;
 }
